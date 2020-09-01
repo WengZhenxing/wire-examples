@@ -3,8 +3,8 @@ package service
 import (
 	"log"
 
-	"github.com/google/wire"
 	"context"
+	"github.com/google/wire"
 	"io"
 )
 
@@ -13,13 +13,12 @@ type MailSender interface {
 	Send()
 }
 
-
 // MailConfig 邮件配置
 type MailConfig struct {
 }
+
 // mailSender MailSender接口实现
 type mailSender struct {
-
 }
 
 // Send 发邮件
@@ -35,8 +34,6 @@ func NewMailSender(m *MailConfig) *mailSender {
 // MailSet 声明NewMailSender的返回值是MailSender接口类型
 var MailSet = wire.NewSet(NewMailSender, wire.Bind(new(MailSender), new(*mailSender)))
 
-
-
 type Options struct {
 	// Messages is the set of recommended greetings.
 	Messages []string
@@ -45,15 +42,14 @@ type Options struct {
 }
 type Greeter struct {
 	msg []string
-	w io.Writer
+	w   io.Writer
 }
-
 
 func NewGreeter(ctx context.Context, opts *Options) (*Greeter, error) {
 	return &Greeter{
 		msg: opts.Messages,
-		w:opts.Writer,
+		w:   opts.Writer,
 	}, nil
 }
 
-var GreeterSet = wire.NewSet(NewGreeter,wire.Struct(new(Options), "*"))
+var GreeterSet = wire.NewSet(NewGreeter, wire.Struct(new(Options), "*"))

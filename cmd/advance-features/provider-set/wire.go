@@ -5,7 +5,7 @@ package main
 
 import "github.com/google/wire"
 
-func InitializeEvent(msg string) Event{
+func InitializeEvent(msg string) Event {
 	//wire.Build(NewEvent, NewGreeter, NewMessage)
 	wire.Build(EventSet)
 	return Event{}

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"log"
 	"database/sql"
+	"log"
 
 	"github.com/google/wire"
 )
@@ -23,7 +23,7 @@ func (u *userRepo) AddUser() {
 }
 
 // NewUserRepo provider: 根据*sql.DB初始化 *userRepo
-func NewUserRepo(db *sql.DB) *userRepo{
+func NewUserRepo(db *sql.DB) *userRepo {
 	return &userRepo{}
 }
 

@@ -6,6 +6,6 @@ package main
 import "github.com/google/wire"
 
 func InitializeClient(config Config) (*Service, error) { // <-- 第二个参数设置成error
-	wire.Build(NewService,NewAPIClient)
-	return nil,nil
+	wire.Build(NewService, NewAPIClient)
+	return nil, nil
 }

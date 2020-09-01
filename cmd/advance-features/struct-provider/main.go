@@ -11,10 +11,12 @@ func ProvideFoo() Foo {
 func ProvideBar() Bar {
 	return 2
 }
+
 type FooBar struct {
 	MyFoo Foo
 	MyBar Bar
 }
+
 var Set = wire.NewSet(
 	ProvideFoo,
 	ProvideBar,

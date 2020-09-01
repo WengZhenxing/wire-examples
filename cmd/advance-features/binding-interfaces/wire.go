@@ -5,7 +5,7 @@ package main
 
 import "github.com/google/wire"
 
-func InitializeUserService(foo string, bar int) (*UserService){
-	wire.Build(NewUserService,MockUserRepoSet)
+func InitializeUserService(foo string, bar int) *UserService {
+	wire.Build(NewUserService, MockUserRepoSet)
 	return nil
 }
